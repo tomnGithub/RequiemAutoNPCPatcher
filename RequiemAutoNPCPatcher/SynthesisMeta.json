@@ -1,8 +1,8 @@
 {
   "Nickname": "Requiem Auto NPC Patcher",
   "Visibility": "Visible",
-  "OneLineDescription": "Unreleased.",
-  "LongDescription": "Unreleased.",
+  "OneLineDescription": "Requiem Auto NPC Patche.",
+  "LongDescription": "Adjusts the stats, perks, and levels of NPCs added by mods to be in line with Requiem's Balancing. Makes any mod playable in Requiem.",
   "PreferredAutoVersioning": "Default",
   "RequiredMods": [],
   "TargetedReleases": [
