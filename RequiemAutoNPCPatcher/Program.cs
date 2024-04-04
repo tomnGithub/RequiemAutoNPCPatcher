@@ -1402,7 +1402,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
 
 
                         if (level > 45 && level < 53) addToPresentOffset = 57.14 * (level - 45);
-                        if (level > 52) addToPresentOffset = 700;
+                        if (level > 52) addToPresentOffset = 400;
 
 
                         staminaOffsetPerLevel = 1000;
@@ -1792,7 +1792,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                                     {
                                     }
 
-                                    if (level > 29) addToPresentOffset = 300;
+                                    if (level > 29) addToPresentOffset = 100;
 
                                     draugrmatch = 1;
                                     level = 1;
@@ -1941,7 +1941,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
 
                                     // classHealthGain = 2.5;
                                     if (level > 26 && level < 45) addToPresentOffset = 13.63636364 * (level - 26);
-                                    if (level > 52) addToPresentOffset = 400;
+                                    if (level > 52) addToPresentOffset = 200;
                                     //
                                     //{
                                     //    addedHealthPerLevel = 200 + ((13.63636364-2.5) * (level - 27));
@@ -2605,7 +2605,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                        // {
                             /////////////////////////////////////////////////////////////////////////////HEALTH
                             if (oGhealthoffset >= addedHealthPerLevel + addToPresentOffset)
-                                neWhealthoffset = oGhealthoffset - addedHealthPerLevel + addToPresentOffset;
+                                neWhealthoffset = oGhealthoffset - (addedHealthPerLevel + addToPresentOffset);
                             if (oGhealthoffset < addedHealthPerLevel + addToPresentOffset) neWhealthoffset = 0;
                       //  }
 
@@ -2633,7 +2633,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                        // {
                             /////////////////////////////////////////////////////////////////////////////HEALTH
                             if (oGhealthoffset >= addedHealthPerLevel + addToPresentOffset)
-                                neWhealthoffset = oGhealthoffset - addedHealthPerLevel + addToPresentOffset;
+                                neWhealthoffset = oGhealthoffset - (addedHealthPerLevel + addToPresentOffset);
                             if (oGhealthoffset < addedHealthPerLevel + addToPresentOffset) neWhealthoffset = 0;
                             /////////////////////////////////////////////////////////////////////////////MAGICKA
                             if (ogMagickoffset >= magickaOffsetPerLevel * (actorLevel - 1) + mageIntercept)
