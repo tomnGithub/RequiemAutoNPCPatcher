@@ -1178,6 +1178,9 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                     if (modKey == slectedPlugin)
                         npcFromSelectedMod = 1;
 
+                if(npcFromSelectedMod == 0){
+                continue;
+                }
                 var raceThing = npc.Race;
                 var npcRaceGetter = raceThing.Resolve(state.LinkCache);
                 var npcRaceId = npcRaceGetter.EditorID;
