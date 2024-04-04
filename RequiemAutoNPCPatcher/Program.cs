@@ -2613,7 +2613,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                        // {
                        //     /////////////////////////////////////////////////////////////////////////////HEALTH
                        //     if (oGhealthoffset >= addedHealthPerLevel + addToPresentOffset)
-                       //         neWhealthoffset = - addedHealthPerLevel + addToPresentOffset;
+                       //         neWhealthoffset = oGhealthoffset - addedHealthPerLevel + addToPresentOffset;
                        //     if (oGhealthoffset < addedHealthPerLevel + addToPresentOffset)
                        //         neWhealthoffset = addedHealthPerLevel + addToPresentOffset;
                        // }
