@@ -176,6 +176,7 @@ FrostbiteSpiderRaceGiant,FrostbiteSpiderProject.hkx,250,4,50,04E507:Skyrim.esm
 CowRace,HighlandCowProject.hkx,15,0,25,04E785:Skyrim.esm
 FrostbiteSpiderRaceLarge,FrostbiteSpiderProject.hkx,100,4,100,053477:Skyrim.esm
 ChaurusReaperRace,ChaurusProject.hkx,150,4,150,0A5601:Skyrim.esm
+SkeletonRace,DraugrSkeletonProject.hkx,20,0,80,0B7998:Skyrim.esm
 SkeletonRace,DraugrProject.hkx,20,0,80,0B7998:Skyrim.esm
 RigidSkeletonRace,null.hkx,-99999,0,-99999,000B9FD7:Skyrim.esm
 SkeletonArmorRace,null.hkx,-99999,0,-99999,020023E2:Skyrim.esm
