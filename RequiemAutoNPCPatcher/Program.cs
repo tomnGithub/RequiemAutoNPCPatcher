@@ -3061,19 +3061,19 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
        //
         //negative offset spells
         WriteToIniFile(outputPath, $";Negative Offset Spells");
-        if (classString1 != null) WriteToIniFile(outputPath, "Spell = 0x8BA~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString1?.Substring(1));
-        if (classString2 != null) WriteToIniFile(outputPath, "Spell = 0x8AF~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString2?.Substring(1));
-        if (classString3 != null) WriteToIniFile(outputPath, "Spell = 0x8B4~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString3?.Substring(1));
-        if (classString4 != null) WriteToIniFile(outputPath, "Spell = 0x8B7~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString4?.Substring(1));
-        if (classString5 != null) WriteToIniFile(outputPath, "Spell = 0x8B8~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString5?.Substring(1));
-        if (classString6 != null) WriteToIniFile(outputPath, "Spell = 0x8B5~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString6?.Substring(1));
-        if (classString7 != null) WriteToIniFile(outputPath, "Spell = 0x8B6~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString7?.Substring(1));
-        if (classString8 != null) WriteToIniFile(outputPath, "Spell = 0x8B2~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString8?.Substring(1));
-        if (classString9 != null) WriteToIniFile(outputPath, "Spell = 0x8B3~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString9?.Substring(1));
-       if (classString10 != null) WriteToIniFile(outputPath, "Spell = 0x8B1~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString10?.Substring(1));
-       if (classString11 != null) WriteToIniFile(outputPath, "Spell = 0x8B9~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString11?.Substring(1));
-       if (classString12 != null) WriteToIniFile(outputPath, "Spell = 0x8AD~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|" + classString12?.Substring(1));
-       if (classString13 != null) WriteToIniFile(outputPath, "Spell = 0x8AC~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|" + classString13?.Substring(1));
+        if (classString1 != null) WriteToIniFile(outputPath, "Spell = 0x8BA~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString1?.Substring(1));
+        if (classString2 != null) WriteToIniFile(outputPath, "Spell = 0x8AF~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString2?.Substring(1));
+        if (classString3 != null) WriteToIniFile(outputPath, "Spell = 0x8B4~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString3?.Substring(1));
+        if (classString4 != null) WriteToIniFile(outputPath, "Spell = 0x8B7~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString4?.Substring(1));
+        if (classString5 != null) WriteToIniFile(outputPath, "Spell = 0x8B8~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString5?.Substring(1));
+        if (classString6 != null) WriteToIniFile(outputPath, "Spell = 0x8B5~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString6?.Substring(1));
+        if (classString7 != null) WriteToIniFile(outputPath, "Spell = 0x8B6~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString7?.Substring(1));
+        if (classString8 != null) WriteToIniFile(outputPath, "Spell = 0x8B2~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString8?.Substring(1));
+        if (classString9 != null) WriteToIniFile(outputPath, "Spell = 0x8B3~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString9?.Substring(1));
+       if (classString10 != null) WriteToIniFile(outputPath, "Spell = 0x8B1~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString10?.Substring(1));
+       if (classString11 != null) WriteToIniFile(outputPath, "Spell = 0x8B9~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString11?.Substring(1));
+       if (classString12 != null) WriteToIniFile(outputPath, "Spell = 0x8AD~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|" + classString12?.Substring(1));
+       if (classString13 != null) WriteToIniFile(outputPath, "Spell = 0x8AC~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|" + classString13?.Substring(1));
        // //forceKeyWord
        // WriteToIniFile(outputPath, $";Force Keyword");
        // WriteToIniFile(outputPath, $"0x8A9~RequiemPatcherKeyword.esp|NONE|" + forceKeyWord?.Substring(1));
