@@ -3008,7 +3008,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                 }
             }
 
-    
+    WriteToIniFile(outputPath, "Keyword = reqRebalanceDerivedPlayable|ElderRace+ActorRebalancedForRequiem,-Vampire");
         WriteToIniFile(outputPath, $";KeywordActorRebalancedForRequiem ");
         WriteToIniFile(outputPath, "Keyword = ActorRebalancedForRequiem|NONE|" + forceKeyWord?.Substring(1));
         WriteToIniFile(outputPath, $";Keyword reqClassIsWarrior");
