@@ -1181,8 +1181,25 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                 if(npcFromSelectedMod == 0){
                 continue;
                 }
+
+                
                 var raceThing = npc.Race;
-                var npcRaceGetter = raceThing.Resolve(state.LinkCache);
+IRaceGetter? npcRaceGetter;
+try
+{
+    npcRaceGetter = raceThing.Resolve(state.LinkCache);
+    // Additional logic here
+}
+catch (Exception ex) // Catch any exception
+{
+    // Handle the exception, e.g., log it, or ignore it
+    Console.WriteLine("Mod author of " + npc.FormKey.ModKey.ToString() + " has set the Race of the NPC, " + npc.EditorID + ", improperly. "
+        + npc.EditorID + " will be skipped and not patched. Patcher will move on to patch other NPCs");
+
+    continue; // This will skip the current iteration and move on to the next one
+}
+                
+               
                 var npcRaceId = npcRaceGetter.EditorID;
 
                 uint racematch = 0;
@@ -1191,7 +1208,24 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                 var classThing = npc.Class;
                 //  string theIDofClass = classThing?.ToString() ?? "Unknown";
 
-                var idClassGetter = classThing?.Resolve(state.LinkCache);
+IClassGetter? idClassGetter;
+//If mod author gave NPC a null class than it will be skipped.
+try
+{
+     idClassGetter = classThing?.Resolve(state.LinkCache);
+    // Additional logic here
+}
+catch (Exception ex) // Catch any exception
+{
+    // Handle the exception, e.g., log it, or ignore it
+    Console.WriteLine("Mod author of " + npc.FormKey.ModKey.ToString() + " has set the class of the NPC, " + npc.EditorID + ", improperly. "
+        + npc.EditorID + " will be skipped and not patched. Patcher will move on to patch other NPCs");
+
+    continue; // This will skip the current iteration and move on to the next one
+}
+
+                
+           
                 var npcClass = "Warrior";
                 var npcClassHsm = "Warrior";
                 object npcClassHealthPerLevel = 1.5;
@@ -1271,7 +1305,8 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                     double staminaOffsetPerLevel = 10;
                     int warriorMismatch = 0;
                     int pureMageMismatch = 0;
-               
+
+                    ISpellRecordGetter? npcSpellGetter;
                     if (npcClass == "Warrior")
                     {
 
@@ -1282,7 +1317,19 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
 
                             if (spellThing != null)
                             {
-                                var npcSpellGetter = spellThing.Resolve(state.LinkCache);
+                                try
+{
+    npcSpellGetter = spellThing.Resolve(state.LinkCache);
+    // Additional logic here
+}
+catch (Exception ex) // Catch any exception
+{
+    // Handle the exception, e.g., log it, or ignore it
+    Console.WriteLine("Mod author of " + npc.FormKey.ModKey.ToString() + " has given the NPC, " + npc.EditorID + ",  a spell improperly. "
+        + npc.EditorID + " will be skipped and not patched. Patcher will move on to patch other NPCs");
+
+    continue; // This will skip the current iteration and move on to the next one
+}
                                 npcSpellId += npcSpellGetter.EditorID;
 
                             }
@@ -1308,7 +1355,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                         
 
                     }
-
+ IItemGetter? npcitemGetter;
                     if (npcClass == "PureMage")
                     {
 
@@ -1321,7 +1368,20 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
 
                             if (itemThing != null)
                             {
-                                var npcitemGetter = itemThing2?.Resolve(state.LinkCache);
+                                 try
+ {
+     npcitemGetter = itemThing2?.Resolve(state.LinkCache);
+     // Additional logic here
+ }
+ catch (Exception ex) // Catch any exception
+ {
+     // Handle the exception, e.g., log it, or ignore it
+     Console.WriteLine("Mod author of " + npc.FormKey.ModKey.ToString() + " has given the NPC, " + npc.EditorID + ",  an item improperly. "
+         + npc.EditorID + " will be skipped and not patched. Patcher will move on to patch other NPCs");
+
+     continue; // This will skip the current iteration and move on to the next one
+ }
+
                                 npcitemId += npcitemGetter?.EditorID;
 
                             }
@@ -2709,7 +2769,22 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                         if (npc.Configuration.TemplateFlags.HasFlag(NpcConfiguration.TemplateFlag.Stats)) hasUseStats++;
 
                     var templateThing = npc.Template;
-                    var npcTemplateGetter = templateThing.Resolve(state.LinkCache);
+                    INpcSpawnGetter? npcTemplateGetter;
+
+                        
+                    try
+{
+    npcTemplateGetter = templateThing.Resolve(state.LinkCache);
+    // Additional logic here
+}
+catch (Exception ex) // Catch any exception
+{
+    // Handle the exception, e.g., log it, or ignore it
+    Console.WriteLine("Mod author of " + npc.FormKey.ModKey.ToString() + " has set the template of the NPC, " + npc.EditorID + ", improperly. "
+        + npc.EditorID + " will be skipped and not patched. Patcher will move on to patch other NPCs");
+
+    continue; // This will skip the current iteration and move on to the next one
+}
 
                     int templateFromNewMod = 0;
                     foreach (var selectedPlugin in npcGroups.Select(x => x.ModKey.FileName))
