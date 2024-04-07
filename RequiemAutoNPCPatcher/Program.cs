@@ -2611,6 +2611,12 @@ catch (Exception ex) // Catch any exception
                             if (oGhealthoffset >= addedHealthPerLevel * (actorLevel - 1))
                                 neWhealthoffset = oGhealthoffset - addedHealthPerLevel * (actorLevel - 1);
                             if (oGhealthoffset < addedHealthPerLevel * (actorLevel - 1)) neWhealthoffset = 0;
+
+                            if(isFromNewRace == 1 && formSettings.Value.MakeNewRacesStronger == true)
+                    {
+                        neWhealthoffset = oGhealthoffset;
+
+                    }
                             //NEWhealthoffset = (addedHealthPerLevel * (actor_LEVEL - 1));
                             /////////////////////////////////////////////////////////////////////////////MAGICKA
                             if (ogMagickoffset >= magickaOffsetPerLevel * (actorLevel - 1) + mageIntercept)
