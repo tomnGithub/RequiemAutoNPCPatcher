@@ -2468,7 +2468,7 @@ catch (Exception ex) // Catch any exception
                                     break;
                                 case "DLC1GargoyleVariantBossRace":
                                     //Formkey.Factory("00084E:RequiemPatcherKeyword.esp");
-                                    addedHealthPerLevel = 100;
+                               //     addedHealthPerLevel = 100;
                                     staminaOffsetPerLevel = 0;
                                     magickaOffsetPerLevel = 0;
                                     level = 1;
@@ -2484,7 +2484,7 @@ catch (Exception ex) // Catch any exception
                                     break;
                                 case "DLC1GargoyleVariantGreenRace":
                                     //Formkey.Factory("00084F:RequiemPatcherKeyword.esp");
-                                    addedHealthPerLevel = 100;
+                                 //   addedHealthPerLevel = 100;
                                     staminaOffsetPerLevel = 0;
                                     magickaOffsetPerLevel = 0;
                                     level = 1;
@@ -2499,14 +2499,14 @@ catch (Exception ex) // Catch any exception
                                     break;
                                 case "DLC1GargoyleRace":
                                     //Formkey.Factory("000850:RequiemPatcherKeyword.esp");
-                                    addedHealthPerLevel = 100;
+                                  //  addedHealthPerLevel = 100;
                                     staminaOffsetPerLevel = 0;
                                     magickaOffsetPerLevel = 0;
                                     level = 1;
                                     racematch = 1;
                                     doesScale = 0;
                                     delevelToSet = 35;
-                                    vanillaOffset = 100;
+                                  //  vanillaOffset = 100;
                                     Array.Resize(ref racePerksToDistribute, racePerksToDistribute.Length + 1);
                                     racePerksToDistribute[0] = "0FAB0B:Requiem.esp";
                                     Array.Resize(ref raceSpellsToDistributNEw, raceSpellsToDistributNEw.Length + 1);
