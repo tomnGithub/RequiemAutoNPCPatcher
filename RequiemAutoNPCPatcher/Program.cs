@@ -539,7 +539,7 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                             if (modifiedRace.UnarmedDamage > reqUnarmDam) reqUnarmDam = modifiedRace.UnarmedDamage;
 
                             modifiedRace.UnarmedDamage = reqUnarmDam;
-                            modifiedRace.UnarmedReach = reqUnarmReach;
+                       //     modifiedRace.UnarmedReach = reqUnarmReach;
                             modifiedRace.BaseMass = reqBaseMass;
                             modifiedRace.Regen[BasicStat.Health] = raceGetter.Regen[BasicStat.Health];
                             modifiedRace.Regen[BasicStat.Magicka] = raceGetter.Regen[BasicStat.Magicka];
