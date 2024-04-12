@@ -2804,6 +2804,7 @@ catch (Exception ex) // Catch any exception
                         hasVanillaTemplate = 1;
                     }
 
+
                     if(hasUseStats == 1 && hasVanillaTemplate == 1)
                     {
                         inheritsStatsFromVanillaTemplate = 1;
@@ -3093,8 +3094,18 @@ catch (Exception ex) // Catch any exception
             }
 
     WriteToIniFile(outputPath, "Keyword = reqRebalanceDerivedPlayable|ElderRace+ActorRebalancedForRequiem,-Vampire");
-        WriteToIniFile(outputPath, $";KeywordActorRebalancedForRequiem ");
-        WriteToIniFile(outputPath, "Keyword = ActorRebalancedForRequiem|NONE|" + forceKeyWord?.Substring(1));
+
+
+
+        if (!string.IsNullOrEmpty(forceKeyWord))
+        {
+            WriteToIniFile(outputPath, $";KeywordActorRebalancedForRequiem ");
+            WriteToIniFile(outputPath, "Keyword = ActorRebalancedForRequiem|NONE|" + forceKeyWord.Substring(1));
+        }
+
+
+
+
         WriteToIniFile(outputPath, $";Keyword reqClassIsWarrior");
         WriteToIniFile(outputPath, "Keyword = reqClassIsWarrior|ActorRebalancedForRequiem|" + classIsWarrior?.Substring(1));
         WriteToIniFile(outputPath, $";Keyword reqClassIsBattleMage");
@@ -3109,40 +3120,52 @@ catch (Exception ex) // Catch any exception
 
         WriteToIniFile(outputPath, $";Keyword reqRaceIsDefaultRace");
         WriteToIniFile(outputPath, "Keyword = reqRaceIsDefaultRace|-Vampire|" + playableRace?.Substring(1));
-       // WriteToIniFile(outputPath, $";Keyword reqRebalanceDerivedPlayable");
-       // WriteToIniFile(outputPath, "Keyword = reqRebalanceDerivedPlayable|reqRaceIsDefaultRace+ActorRebalancedForRequiem,-Vampire");
+        // WriteToIniFile(outputPath, $";Keyword reqRebalanceDerivedPlayable");
+        // WriteToIniFile(outputPath, "Keyword = reqRebalanceDerivedPlayable|reqRaceIsDefaultRace+ActorRebalancedForRequiem,-Vampire");
 
         //ignore these npcs
-        WriteToIniFile(outputPath, $";Keyword reqRebalanceIgnoreNegativeOffset");
-        WriteToIniFile(outputPath, "Keyword = reqRebalanceIgnoreNegativeOffset|NONE|" + ignoreNPC?.Substring(1));
-        WriteToIniFile(outputPath, $";Keyword reqRebalanceIgnorePerks");
-        WriteToIniFile(outputPath, "Keyword = reqRebalanceIgnorePerks|NONE|" + forceKeyWordSpells?.Substring(1));
-        WriteToIniFile(outputPath, $";Keyword reqRebalanceIgnoreHealth");
-        WriteToIniFile(outputPath, "Keyword = reqRebalanceIgnoreHealth|NONE|" + forceKeyWordHealth?.Substring(1));
+
+        if (!string.IsNullOrEmpty(ignoreNPC))
+        {
+            WriteToIniFile(outputPath, $";Keyword reqRebalanceIgnoreNegativeOffset");
+            WriteToIniFile(outputPath, "Keyword = reqRebalanceIgnoreNegativeOffset|NONE|" + ignoreNPC.Substring(1));
+        }
+
+        if (!string.IsNullOrEmpty(forceKeyWordSpells))
+        {
+            WriteToIniFile(outputPath, $";Keyword reqRebalanceIgnorePerks");
+            WriteToIniFile(outputPath, "Keyword = reqRebalanceIgnorePerks|NONE|" + forceKeyWordSpells.Substring(1));
+        }
+
+        if (!string.IsNullOrEmpty(forceKeyWordHealth))
+        {
+            WriteToIniFile(outputPath, $";Keyword reqRebalanceIgnoreHealth");
+            WriteToIniFile(outputPath, "Keyword = reqRebalanceIgnoreHealth|NONE|" + forceKeyWordHealth.Substring(1));
+        }
 
 
 
-       // WriteToIniFile(outputPath, $";Health Warrior");
-       // WriteToIniFile(outputPath, "Spell = 0x88C~RequiemPatcherKeyword.esp|reqClassIsWarrior+reqRebalanceDerivedPlayable,reqClassIsBattleMage+reqRebalanceDerivedPlayable,-reqRebalanceIgnoreHealth");
-       //
-       // WriteToIniFile(outputPath, $";Health PureMage");
-       // WriteToIniFile(outputPath, "Spell = 0x8AB~RequiemPatcherKeyword.esp|reqClassIsPureMage+reqRebalanceDerivedPlayable,-reqRebalanceIgnoreHealth");
-       //
-       // WriteToIniFile(outputPath, $";Stamina");
-       // WriteToIniFile(outputPath, $"Spell = 0x8AA~RequiemPatcherKeyword.esp|reqClassIsWarrior+reqRebalanceDerivedPlayable,reqClassIsBattleMage+reqRebalanceDerivedPlayable,+ActorRebalancedForRequiem,reqRaceIsFalmerRace,reqRaceIsDraugrRace,-reqRebalanceIgnoreHealth|FalmerRace,DraugrRace");
-       //
-       // WriteToIniFile(outputPath, $";Magicka");
-       // WriteToIniFile(outputPath, $"Spell = 0x8A9~RequiemPatcherKeyword.esp|+reqRebalanceUsesMagic,reqClassIsPureMage+reqRebalanceDerivedPlayable,reqClassIsBattleMage+reqRebalanceDerivedPlayable,+ActorRebalancedForRequiem,reqRaceIsFalmerRace,reqRaceIsDraugrRace,-reqRebalanceIgnoreHealth|FalmerRace,DraugrRace");
-       //
-       // WriteToIniFile(outputPath, $";Health Draugr");
-       // WriteToIniFile(outputPath, $"Spell = 0x891~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,reqRaceIsDraugrRace,-reqRebalanceIgnoreHealth|DraugrRace");
-       //
-       // WriteToIniFile(outputPath, $";Health Falmer");
-       // WriteToIniFile(outputPath, $"Spell = 0x896~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,reqRaceIsFalmerRace,-reqRebalanceIgnoreHealth|FalmerRace");
-       //
-       // WriteToIniFile(outputPath, $";Health Vampire");
-       // WriteToIniFile(outputPath, $"Spell = 0x8A5~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,+Vampire,-reqRebalanceIgnoreHealth");
-       //
+        // WriteToIniFile(outputPath, $";Health Warrior");
+        // WriteToIniFile(outputPath, "Spell = 0x88C~RequiemPatcherKeyword.esp|reqClassIsWarrior+reqRebalanceDerivedPlayable,reqClassIsBattleMage+reqRebalanceDerivedPlayable,-reqRebalanceIgnoreHealth");
+        //
+        // WriteToIniFile(outputPath, $";Health PureMage");
+        // WriteToIniFile(outputPath, "Spell = 0x8AB~RequiemPatcherKeyword.esp|reqClassIsPureMage+reqRebalanceDerivedPlayable,-reqRebalanceIgnoreHealth");
+        //
+        // WriteToIniFile(outputPath, $";Stamina");
+        // WriteToIniFile(outputPath, $"Spell = 0x8AA~RequiemPatcherKeyword.esp|reqClassIsWarrior+reqRebalanceDerivedPlayable,reqClassIsBattleMage+reqRebalanceDerivedPlayable,+ActorRebalancedForRequiem,reqRaceIsFalmerRace,reqRaceIsDraugrRace,-reqRebalanceIgnoreHealth|FalmerRace,DraugrRace");
+        //
+        // WriteToIniFile(outputPath, $";Magicka");
+        // WriteToIniFile(outputPath, $"Spell = 0x8A9~RequiemPatcherKeyword.esp|+reqRebalanceUsesMagic,reqClassIsPureMage+reqRebalanceDerivedPlayable,reqClassIsBattleMage+reqRebalanceDerivedPlayable,+ActorRebalancedForRequiem,reqRaceIsFalmerRace,reqRaceIsDraugrRace,-reqRebalanceIgnoreHealth|FalmerRace,DraugrRace");
+        //
+        // WriteToIniFile(outputPath, $";Health Draugr");
+        // WriteToIniFile(outputPath, $"Spell = 0x891~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,reqRaceIsDraugrRace,-reqRebalanceIgnoreHealth|DraugrRace");
+        //
+        // WriteToIniFile(outputPath, $";Health Falmer");
+        // WriteToIniFile(outputPath, $"Spell = 0x896~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,reqRaceIsFalmerRace,-reqRebalanceIgnoreHealth|FalmerRace");
+        //
+        // WriteToIniFile(outputPath, $";Health Vampire");
+        // WriteToIniFile(outputPath, $"Spell = 0x8A5~RequiemPatcherKeyword.esp|+ActorRebalancedForRequiem,+Vampire,-reqRebalanceIgnoreHealth");
+        //
         //negative offset spells
         WriteToIniFile(outputPath, $";Negative Offset Spells");
         if (classString1 != null) WriteToIniFile(outputPath, "Spell = 0x8BA~RequiemPatcherKeyword.esp|ActorRebalancedForRequiem,-reqRebalanceIgnoreNegativeOffset|"+ classString1?.Substring(1));
