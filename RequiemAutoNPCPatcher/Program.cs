@@ -2967,7 +2967,7 @@ catch (Exception ex) // Catch any exception
 
                     if (!npc.Template.IsNull)
                     {
-                        if (inheritsPerksAndSpellsFromTemplate == 0)
+                        if (inheritsPerksAndSpellsFromTemplate == 1)
                         {
                             // modifiedNpc.Keywords ??= new();
                             // modifiedNpc.Keywords.Add(formKeyActorRebalancedForRequiemPerks); //needs this keyword for spid to distribute spells and perks
