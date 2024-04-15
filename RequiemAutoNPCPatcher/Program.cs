@@ -103,8 +103,19 @@ public class Program
     public static void RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state)
     {
         if (formSettings.Value.TargetMods.Count == 0)
-            //System.//Console.WriteLine("Must at least specify one target mod in order to do anything.");
+        {
+            System.Console.WriteLine("ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR");
+            System.Console.WriteLine("ERROR: PATCHER DID NOT DETECT ANY MODS TO PATCH IN YOUR LOAD ORDER. NO NPCS WILL BE MODIFIED");
+            System.Console.WriteLine("TRY THE FOLLOWING STEPS TO FIX THIS");
+            System.Console.WriteLine("1. Make sure the mod you want to patch is selected in the patcher's settings tab in the 'TARGET MODS' panel and not in the 'BLACKLISTED MODS' panel.");
+            System.Console.WriteLine("2. Make sure RequiemPatcherKeyword.esp is enabled in your load order BEFORE running Synthesis.");
+            System.Console.WriteLine("3. Make sure the plugin of the mod you want to patch is enabled in your load order BEFORE running Synthesis.");
+            System.Console.WriteLine("4. If you have already ran the patcher and generated an esp (even if it is an empty one), make sure the plugin it created is at the bottom of your load order BEFORE running Synthesis.");
+            System.Console.WriteLine("If these steps do not fix the erorr, refer to the mod page for help.");
             return;
+
+        }
+          
 
         var npcGroups = state.LoadOrder.PriorityOrder.Reverse()
             .Select(listing => listing.Mod)
@@ -113,13 +124,28 @@ public class Program
             .Where(x => formSettings.Value.TargetMods.Contains(x.ModKey))
             .ToArray();
 
+        if (!npcGroups.Any())
+        {
+            System.Console.WriteLine("ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR");
+            System.Console.WriteLine("ERROR: PATCHER DID NOT DETECT ANY MODS TO PATCH IN YOUR LOAD ORDER. NO NPCS WILL BE MODIFIED");
+            System.Console.WriteLine("TRY THE FOLLOWING STEPS TO FIX THIS");
+            System.Console.WriteLine("1. Make sure the mod you want to patch is selected in the patcher's settings tab in the 'TARGET MODS' panel and not in the 'BLACKLISTED MODS' panel.");
+            System.Console.WriteLine("2. Make sure RequiemPatcherKeyword.esp is enabled in your load order BEFORE running Synthesis.");
+            System.Console.WriteLine("3. Make sure the plugin of the mod you want to patch is enabled in your load order BEFORE running Synthesis.");
+            System.Console.WriteLine("4. If you have already ran the patcher and generated an esp (even if it is an empty one), make sure the plugin it created is at the bottom of your load order BEFORE running Synthesis.");
+            System.Console.WriteLine("If these steps do not fix the erorr, refer to the mod page for help.");
+            return;
 
-      
+        }
+
 
         Console.WriteLine("Patching NPCs and Races from the Selected Plugins:");
         foreach (var modKey in npcGroups.Select(x => x.ModKey))
         {
             Console.WriteLine($"  {modKey}");
+
+
+
         }
         var outputPath = $@"{state.DataFolderPath}\0RequiemAutoPatcher_DISTR.ini";
         
@@ -2748,7 +2774,11 @@ catch (Exception ex) // Catch any exception
                     var hasNegativeOffset = 0;
                     if (oGhealthoffset < 0)
                     {
-                        neWhealthoffset = oGhealthoffset;
+                    if (neWhealthoffset >= 0)
+                    {
+                        neWhealthoffset = neWhealthoffset + oGhealthoffset;
+                    }
+                       
                         hasNegativeOffset = 1;
                     }
 
