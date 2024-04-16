@@ -880,8 +880,28 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
 
                                 }
 
-                        modifiedRace.Keywords ??= new();
-                        modifiedRace.Keywords.Add(FormKeyNewRace);
+                        int hasAutoKeyword = 0;
+                        foreach (var raceKeyWord in modifiedRace.Keywords.EmptyIfNull())
+                        {
+                            try
+                            {
+                                if (raceKeyWord.FormKey.ModKey == FormKeyNewRace.ModKey)
+                                {
+                                    hasAutoKeyword = 1;
+                                }
+                            }
+                            catch
+                            {
+                              //  System.Console.WriteLine(raace.EditorID + " has a null keyword.");
+                            }
+                        }
+                     if (hasAutoKeyword == 0)
+                        {
+                          
+                            modifiedRace.Keywords ??= new();
+                            modifiedRace.Keywords.Add(FormKeyNewRace);
+                        }
+                        
                     }
                 }
 
@@ -3124,6 +3144,10 @@ catch (Exception ex) // Catch any exception
             }
 
     WriteToIniFile(outputPath, "Keyword = reqRebalanceDerivedPlayable|ElderRace+ActorRebalancedForRequiem,-Vampire");
+        WriteToIniFile(outputPath, "Perk = 0xBABE8~Skyrim.esm|reqRaceIsDLC2MountedRieklingRace,-reqRebalanceIgnorePerks");
+        WriteToIniFile(outputPath, "Perk = 0x79346~Skyrim.esm|reqRaceIsDLC2MountedRieklingRace,-reqRebalanceIgnorePerks");
+        WriteToIniFile(outputPath, "Perk = 0xBABE8~Skyrim.esm|ActorRebalancedForRequiem,-reqRebalanceIgnorePerks|DLC2MountedRieklingRace");
+        WriteToIniFile(outputPath, "Perk = 0x79346~Skyrim.esm|ActorRebalancedForRequiem,-reqRebalanceIgnorePerks|DLC2MountedRieklingRace");
 
 
 
