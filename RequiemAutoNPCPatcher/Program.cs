@@ -525,6 +525,18 @@ DremoraRace,null.hkx,-99999,-99999,-99999,0131F0:Skyrim.esm
                         if (raceVoiceMForm?.Substring(0, 17) == "01F1CE:Skyrim.esm" &&
                             raceVoiceFForm?.Substring(0, 17) == "013ADD:Skyrim.esm")
                             raceFormString = "0131F0:Skyrim.esm";
+                        //Check if npc is a mounted boar
+try
+{
+    if (raace.BodyPartData.FormKey == Dragonborn.BodyPartData.DLC2MountedRieklingBodyPartData.FormKey)
+    {
+        raceFormString = "0179CF:Dragonborn.esm";
+}
+}
+catch
+{
+
+}
 
                        
                         var originalRace = new FormLink<IRaceGetter>(FormKey.Factory(raceFormString));
