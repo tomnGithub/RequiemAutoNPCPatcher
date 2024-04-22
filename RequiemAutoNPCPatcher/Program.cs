@@ -585,7 +585,7 @@ catch
                         }
                        
 
-                        DataTableMatchRace.Rows.Add(raace.EditorID, raceGetter.FormKey, raceGetter.EditorID, 1);
+                        DataTableMatchRace.Rows.Add(raace.FormKey, raceGetter.FormKey, raceGetter.EditorID, 1);
                         raceAddedToDf = 1;
 
                         Dictionary<string, int> raceFlags = new Dictionary<string, int>
@@ -917,7 +917,7 @@ catch
                     }
                 }
 
-            if (raceAddedToDf < 1) DataTableMatchRace.Rows.Add(raace.EditorID, raace.FormKey, raace.EditorID, 0);
+            if (raceAddedToDf < 1) DataTableMatchRace.Rows.Add(raace.FormKey, raace.FormKey, raace.EditorID, 0);
         }
 
    
@@ -1258,7 +1258,7 @@ catch (Exception ex) // Catch any exception
 }
                 
                
-                var npcRaceId = npcRaceGetter.EditorID;
+                var npcRaceId = npcRaceGetter.FormKey;
 
                 uint racematch = 0;
                 uint actorNpCmatch = 0; //is ActorTypeNpc if 1
@@ -1496,7 +1496,7 @@ catch (Exception ex) // Catch any exception
 
                     var isFromNewRace = 0;
                     foreach (DataRow row in DataTableMatchRace.Rows)
-                        if (row.Field<string>("OriginalRace") == npcRaceId)
+                        if (row.Field<string>("OriginalRace") == npcRaceId.ToString())
                         {
                             npcMatchedRace = row.Field<string>("MatchEDID");
 
