@@ -33,6 +33,14 @@ namespace RequiemAutoNPCPatcher
             "Even if a custom-body NPC is patched, they will only be a little stronger than they otherwise should be.")]
         public bool MakeNewRacesStronger { get; set; } = true; // Default is on
 
+        [SettingName("Remove Ragdoll Attacks from New non-Giant Races (Hover cursor here for more details.)"),
+            Tooltip("Many creature mods use the spell crGiantStomp to apply stagger to attacks." +
+            "\nIn Vanilla, crGiantStomp's stagger is minor." +
+            "\nIn Requiem, however, it is an aoe knockdown that ragdolls the player and NPCs." +
+            "\n\nFor example, Mihail's Minatours utilize crGiantStomp for ALL thier attacks." +
+            "\nIf this setting is not ENABLED, the Minatours are impossible to fight." )]
+        public bool RemoveKnockDown { get; set; } = true; // Default is on
+
 
 
 

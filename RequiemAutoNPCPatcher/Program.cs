@@ -546,6 +546,11 @@ catch
                         IFormLinkGetter<IRaceGetter> raceLink = originalRace;
                         var raceGetter = raceLink.Resolve(state.LinkCache);
 
+
+
+                      
+
+
                         raceGetter.Starting.TryGetValue(BasicStat.Health, out var reqRaceSh);
                         raceGetter.Starting.TryGetValue(BasicStat.Magicka, out var reqRaceSm);
                         raceGetter.Starting.TryGetValue(BasicStat.Stamina, out var reqRaceSs);
@@ -564,6 +569,33 @@ catch
                         var reqUnarmReach = raceGetter.UnarmedReach;
 
                         var modifiedRace = state.PatchMod.Races.GetOrAddAsOverride(raace);
+
+                        if(originalRace != Skyrim.Race.GiantRace && originalRace != Dragonborn.Race.DLC2LurkerRace && formSettings.Value.RemoveKnockDown == true)
+                        {
+                            for (var i = 0; i <= modifiedRace.Attacks?.Count - 1; i++)
+                            {
+                                try
+                                {
+                                    if (modifiedRace.Attacks?[i].AttackData?.Spell.FormKey.ID == Skyrim.Spell.crGiantStomp.FormKey.ID)
+                                    {
+
+
+                                        modifiedRace.Attacks?[i].AttackData?.Spell.SetTo(null);
+
+
+                                    }
+
+                                }
+                                catch
+                                {
+                                  
+                                }
+
+
+                            }
+                        }
+                        
+
 
                         if (!modifiedRace.Flags.HasFlag(Race.Flag.Playable))
                         {
