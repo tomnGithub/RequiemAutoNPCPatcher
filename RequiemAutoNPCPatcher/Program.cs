@@ -2605,7 +2605,7 @@ catch (Exception ex) // Catch any exception
                                     break;
                                 case "WerewolfBeastRace":
                                     //Formkey.Factory("000851:RequiemPatcherKeyword.esp");
-                                    addedHealthPerLevel = 1000;
+                                    addedHealthPerLevel = 100;
                                     staminaOffsetPerLevel = 900;
                                     magickaOffsetPerLevel = 0;
                                     level = 1;
